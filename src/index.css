@@ -4,28 +4,29 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* This prevents scrolling of the entire page */
+}
+
 #root {
   width: 100vw;
-  height: 100vh;
-}
-
-/* Ensure the video and overlay fill the entire container */
-video {
-  width: 100%;
   height: 100%;
-  object-fit: cover;
+  overflow: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Style for the overlay image */
-img {
-  /* Initial size and position */
-  width: 100px; /* Adjust as needed */
-  height: auto; /* Maintain aspect ratio */
-  /* Additional styles for initial positioning */
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  /* Allow the overlay to be draggable */
-  cursor: grab;
-  /* Add any other styles such as border, box-shadow, etc. */
+body {
+  background-color: #313638;
+}
+
+#three-container {
+  position: absolute;
+  z-index: 999;
 }
